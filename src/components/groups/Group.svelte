@@ -13,7 +13,7 @@
 </script>
 
 {#if !root}
-<a href="javascript:;" class="sidebar-list-link name" class:expanded on:click={toggle}>
+<a href={'#'} class="sidebar-list-link name" class:expanded on:click={toggle}>
   <span>{name}</span>
 </a>
 {/if}

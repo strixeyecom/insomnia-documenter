@@ -17,7 +17,6 @@
   });
 
   export let request;
-  export let env;
   export let language = null;
   export let cookiejars;
 
@@ -117,7 +116,7 @@
             <div class="header">
                 <div class="title">Example request:</div>
                 <div class="copy">
-                    <a href="javascript:" bind:this={copyButton}>{copyText}</a>
+                    <a href={'#'} bind:this={copyButton}>{copyText}</a>
                 </div>
             </div>
             <pre bind:this={codeElement}>{@html exampleHTML}</pre>

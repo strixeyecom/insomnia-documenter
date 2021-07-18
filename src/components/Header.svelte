@@ -7,7 +7,7 @@
 <header>
     <div class="header-left">
         <a
-            href="javascript:"
+            href={'#'}
             class="hamburger-toggler"
             on:click={toggleHamburger}
         >
@@ -15,12 +15,13 @@
         </a>
 
         <a href="/" class="logo">
-            <img src="logo.png" />
+            <img src="logo.png" alt="Homepage"/>
         </a>
     </div>
     <div class="header-right">
+        <!-- svelte-ignore a11y-missing-attribute -->
         <a
-            href="javascript:;"
+            href={'#'}
             class="example-toggler"
             class:inactive={!exampleVisible}
             on:click={toggleExample}
