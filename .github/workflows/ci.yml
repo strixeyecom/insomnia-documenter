@@ -8,16 +8,12 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [10.x, 12.x]
-
     steps:
       - uses: actions/checkout@v1
-      - name: Use Node.js ${{ matrix.node-version }}
+      - name: Use Node.js 10.x
         uses: actions/setup-node@v1
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: 10.x
       - name: Install dependencies
         run: npm install
       - name: Build
@@ -28,9 +24,9 @@ jobs:
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
-          source_file: 'public'
+          source_file: public/.
           destination_repo: 'strixeyecom/strixeyecom.github.io'
-          destination_folder: 'docs/api'
+          destination_folder: docs/api/
           destination_branch: 'feature/initial'
           user_email: 'ahmetelgn@gmail.com'
           user_name: 'ahmetelgun'
