@@ -10,7 +10,8 @@ aside {
   display: block;
 }
 
-.left, .right {
+.left,
+.right {
   width: auto;
   max-width: 100%;
 }
@@ -38,13 +39,15 @@ header .title {
 header .logo {
   margin-left: 0 !important;
   padding: 0 !important;
+  display: none;
 }
 
 header .environment {
   padding: 0 5px !important;
 }
 
-header .run, header .example-toggler {
+header .run,
+header .example-toggler {
   display: none !important;
 }
 
