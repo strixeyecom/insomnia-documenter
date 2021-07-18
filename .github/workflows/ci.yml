@@ -1,10 +1,11 @@
-name: Continuous Integration
+name: ci
 
-on: [push, pull_request]
-
+on:
+  push:
+    branches:
+      - master
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     strategy:
@@ -12,16 +13,25 @@ jobs:
         node-version: [10.x, 12.x]
 
     steps:
-    - uses: actions/checkout@v1
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
-    - name: Install dependencies
-      run: npm install
-    - name: Linting
-      run: npm run lint
-    - name: Unit tests
-      run: npm run test
-      env:
-        CI: true
+      - uses: actions/checkout@v1
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Install dependencies
+        run: npm install
+      - name: Build
+        run: npm run build
+
+      - name: Push
+        uses: dmnemec/copy_file_to_another_repo_action@main
+        env:
+          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+        with:
+          source_file: 'public'
+          destination_repo: 'strixeyecom/strixeyecom.github.io'
+          destination_folder: 'docs/api'
+          destination_branch: 'feature/initial'
+          user_email: 'ahmetelgn@gmail.com'
+          user_name: 'ahmetelgun'
+          commit_message: 'update api documentation'
