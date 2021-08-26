@@ -27,7 +27,7 @@ jobs:
           source_file: public/.
           destination_repo: 'strixeyecom/strixeyecom.github.io'
           destination_folder: docs/api/
-          destination_branch: 'feature/initial'
+          destination_branch: 'master'
           user_email: 'ahmetelgn@gmail.com'
           user_name: 'ahmetelgun'
           commit_message: 'update api documentation'
