@@ -12,7 +12,7 @@ class BodyParser {
       return;
     }
 
-    this.body.text = this.body.text.replace(new RegExp('{{.*}}', 'g'), '"!!Missing declaration in environment!!"');
+    // this.body.text = this.body.text.replace(new RegExp('{{.*}}', 'g'), '"!!Missing declaration in environment!!"');
     let text;
 
     try {
