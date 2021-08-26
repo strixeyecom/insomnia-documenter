@@ -26,7 +26,7 @@
 </script>
 
 <svelte:head>
-  <title>{config.workspace.name}</title>
+  <title>StrixEye API Documentation</title>
 </svelte:head>
 
 <Header {toggleHamburger} {toggleExample} {exampleVisible} />
