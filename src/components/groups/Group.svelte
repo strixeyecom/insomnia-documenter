@@ -2,7 +2,7 @@
   import Request from './Request.svelte';
 
   export let root = false;
-  export let expanded = true;
+  export let expanded = false;
   export let name;
   export let children;
   export let requests;
@@ -21,7 +21,7 @@
 {#if expanded}
   <ul>
     {#each children as child}
-    <li class="folder"><svelte:self {...child}></svelte:self></li>
+    <li class="folder"><svelte:self {...child} expanded={root ? true : false}></svelte:self></li>
     {/each}
     {#each requests as request}
     <li class="request"><Request {request} /></li>
