@@ -116,7 +116,7 @@
             <div class="header">
                 <div class="title">Example request:</div>
                 <div class="copy">
-                    <a href={'#'} bind:this={copyButton}>{copyText}</a>
+                    <a href="javascript:" bind:this={copyButton}>{copyText}</a>
                 </div>
             </div>
             <pre bind:this={codeElement}>{@html exampleHTML}</pre>
